@@ -1,3 +1,7 @@
+# (compatible with python3.8 and python3.9)
+
+---
+
 # fugle-realtime-py
 
 [![Travis (.org)](https://img.shields.io/travis/fortuna-intelligence/fugle-realtime-py.svg)](https://travis-ci.org/fortuna-intelligence/fugle-realtime-py)
