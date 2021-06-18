@@ -5,7 +5,7 @@ from requests import get
 
 def chart(
     apiToken="demo",
-    apiVersion="v0",
+    apiVersion="v0.2",
     host="api.fugle.tw",
     output="dataframe",
     symbolId="2884",
@@ -37,7 +37,7 @@ def chart(
 
 def meta(
     apiToken="demo",
-    apiVersion="v0",
+    apiVersion="v0.2",
     host="api.fugle.tw",
     output="dataframe",
     symbolId="2884",
@@ -63,7 +63,7 @@ def meta(
 
 def quote(
     apiToken="demo",
-    apiVersion="v0",
+    apiVersion="v0.2",
     host="api.fugle.tw",
     output="dataframe",
     symbolId="2884",
@@ -89,7 +89,7 @@ def quote(
 
 def dealts(
     apiToken="demo",
-    apiVersion="v0",
+    apiVersion="v0.2",
     host="api.fugle.tw",
     output="dataframe",
     symbolId="2884",
@@ -100,7 +100,9 @@ def dealts(
     if output not in outputs:
         raise ValueError('output must be one of ["dataframe", "raw"]')
     url = "https://{}/realtime/{}/intraday/dealts".format(host, apiVersion)
-    params = dict(apiToken=apiToken, symbolId=symbolId, limit=limit, offset=offset)
+    params = dict(
+        apiToken=apiToken, symbolId=symbolId, limit=limit, offset=offset
+    )
     response = get(url=url, params=params)
     json = response.json()
     if response.status_code != 200:
